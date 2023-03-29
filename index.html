@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Museum Mate</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" href="assets/img/apple-icon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/palette.ico" />
+    <!-- Load Require CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font CSS -->
+    <link href="assets/css/boxicon.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+    <!-- Load Tempalte CSS -->
+    <link rel="stylesheet" href="assets/css/templatemo.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/custom.css" />
+
+    <!-- <link href="assets/css/glightbox.min.css" rel="stylesheet"> -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/swiper-bundle.min.css" rel="stylesheet" />
+    <script defer src="assets/js/config.js"></script>
+  </head>
+  <script src="/assets/js/authorization/cookieutils.js"></script>
+  <script>
+      // 쿠키에 저장된 토큰을 가져와서 검증
+  </script>
+
+  <body>
+    <!-- Header -->
+    <nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-white shadow">
+      <div class="container d-flex justify-content-between align-items-center">
+          <a class="navbar-brand h1" href="index.html">
+              <i class='bx bx-palette bx-sm text-dark'></i>
+              <span class="text-dark h4">MUMA</span> <span class="text-primary h5">Museum Mate</span>
+          </a>
+          <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbar-toggler-success" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between"
+              id="navbar-toggler-success">
+              <div class="flex-fill mx-xl-5 mb-2">
+                  <ul class="nav navbar-nav d-flex justify-content-start mx-xl-5 text-center text-dark">
+                      <li class="nav-item">
+                          <a class="nav-link btn-outline-primary rounded-pill px-3" href="/">홈</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link btn-outline-primary rounded-pill px-3" href="/exhibition">전시</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link btn-outline-primary rounded-pill px-3" href="/gathering">함께 보러 가요</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link btn-outline-primary rounded-pill px-3" href="/myinfo">마이 페이지</a>
+                      </li>
+                  </ul>
+              </div>
+              <div class="navbar align-self-center d-flex">
+                      <div class="lolocontainer"></div>
+                      <div class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class='bx bx-bell bx-sm bx-tada-hover text-primary'></i>
+                      </div>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <div class = "alarmscontainer"></div>
+                      </ul>
+                  </div>
+                  
+              </div>
+          </div>
+      </div>
+  </nav>
+
+    <!-- Start Banner Hero -->
+    <div class="banner-wrapper bg-light">
+      <div id="index_banner" class="banner-vertical-center-index container-fluid pt-5">
+        <!-- Start slider -->
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="py-5 row d-flex align-items-center">
+                <div class="banner-content col-lg-8 col-8 offset-2 m-lg-auto text-left py-5 pb-5">
+                  <h1 class="banner-heading h1 text-light display-3 mb-0 pb-5 mx-0 px-0 light-300 typo-space-line">
+                    <strong>전시회가 나에게 다가왔다</strong>
+                  </h1>
+                  <p class="banner-body text-light py-3 mx-0 px-0">
+                    여러 곳에 산재되어 있는 전시회 정보를 찾기 힘들지 않으셨나요? <br />
+                    우리는 연결합니다. 작가, 작품, 그리고 당신을.<br />
+                    Museum Mate.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Banner Hero -->
+
+    <!-- ======= 슬라이더 ======= -->
+    <section id="testimonials" class="testimonials section-bg">
+      <!-- ==== 인기있는 전시 ==== -->
+      <div class="container">
+        <h2 class="h2 text-center col-12 py-5 semi-bold-600">전시회 정보</h2>
+        <div class="container-fluid pb-3">
+          <div class="row">
+            <div class="service-heading col-12 col-lg-12 text-center float-end light-300">
+              <i class="bx bx-gift h3 mt-1"></i>
+              <h3 class="h3 pb-4">현재 가장 인기있는 전시입니다</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper" id="swiper-wrapper1"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+      <!-- ==== 종료 임박 전시 ==== -->
+      <div class="container">
+        <div class="container-fluid pb-3">
+          <h2 class="h2 text-center col-12 py-5 semi-bold-600"></h2>
+          <div class="row">
+            <div class="service-heading col-12 col-lg-12 text-center float-end light-300">
+              <i class="bx bx-gift h3 mt-1"></i>
+              <h2 class="h3 pb-4">종료 임박 전시입니다</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper" id="swiper-wrapper2"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= 슬라이더 ======= -->
+    <section id="testimonials" class="testimonials section-bg">
+      <!-- ==== 함께 가요 모집 ==== -->
+      <div class="container">
+        <div class="container-fluid pb-3">
+          <h2 class="h2 text-center col-12 py-5 semi-bold-600">전시회 함께 가요</h2>
+          <div class="row">
+            <div class="service-heading col-12 col-lg-12 text-center float-end light-300">
+              <i class="bx bx-gift h3 mt-1"></i>
+              <h2 class="h3 pb-4">함께가요 모집중입니다</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonials-slider2 swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper" id="swiper-wrapper3"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer></footer>
+
+    <!-- Bootstrap -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Load jQuery require for isotope -->
+    <script src="assets/js/jquery.min.js"></script>
+    <!-- Isotope -->
+    <script src="assets/js/isotope.pkgd.js"></script>
+    <!-- Page Script -->
+    <script>
+      $(window).load(function () {
+        // init Isotope
+        var $projects = $('.projects').isotope({
+          itemSelector: '.project',
+          layoutMode: 'fitRows',
+        });
+        $('.filter-btn').click(function () {
+          var data_filter = $(this).attr('data-filter');
+          $projects.isotope({
+            filter: data_filter,
+          });
+          $('.filter-btn').removeClass('active');
+          $('.filter-btn').removeClass('shadow');
+          $(this).addClass('active');
+          $(this).addClass('shadow');
+          return false;
+        });
+      });
+        window.addEventListener('DOMContentLoaded', function () {
+        renderinout();
+      });
+          window.addEventListener('DOMContentLoaded', function () {
+        renderAlarms();
+      });
+    </script>
+    <!-- Templatemo -->
+    <script src="assets/js/templatemo.js"></script>
+    <!-- Custom -->
+    <script src="assets/js/custom.js"></script>
+
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/slider.js"></script>
+
+    <script src="assets/js/custom.js"></script>
+    <script>
+      window.addEventListener('DOMContentLoaded', function () {
+        renderExhibitionsById();
+        renderExhibitionsByEndAt();
+        renderGatheringsById();
+        renderinout();
+        renderAlarms();
+      });
+    </script>
+
+<script>
+  (function(){var w=window;if(w.ChannelIO){return w.console.error("ChannelIO script included twice.")}var ch=function(){ch.c(arguments)};ch.q=[];ch.c=function(args){ch.q.push(args)};w.ChannelIO=ch;function l(){if(w.ChannelIOInitialized){return}w.ChannelIOInitialized=true;var s=document.createElement("script");s.type="text/javascript";s.async=true;s.src="https://cdn.channel.io/plugin/ch-plugin-web.js";var x=document.getElementsByTagName("script")[0];if(x.parentNode){x.parentNode.insertBefore(s,x)}}if(document.readyState==="complete"){l()}else{w.addEventListener("DOMContentLoaded",l);w.addEventListener("load",l)}})();
+
+  ChannelIO('boot', {
+    "pluginKey": "4392a721-e9c7-4694-8de4-3159ffa65e7e",
+    "memberId": "USER_MEMBER_ID", // fill user's member id
+    "profile": { // fill user's profile
+      "name": "USER_NAME", // fill user's name
+      "mobileNumber": "USER_MOBILE_NUMBER", // fill user's mobile number
+      "CUSTOM_VALUE_1": "VALUE_1", // custom property
+      "CUSTOM_VALUE_2": "VALUE_2" // custom property
+    }
+  });
+</script>
+
+  </body>
+
+</html>

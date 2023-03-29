@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Museum Mate | Gathering-new</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" href="assets/img/apple-icon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/palette.ico" />
+    <!-- Load Require CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font CSS -->
+    <link href="assets/css/boxicon.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+    <!-- Load Tempalte CSS -->
+    <link rel="stylesheet" href="assets/css/templatemo.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/custom.css" />
+    <script src="assets/js/config.js"></script>
+  </head>
+  <script src="/assets/js/authorization/cookieutils.js"></script>
+  <script>
+    // 쿠키에 저장된 토큰을 가져와서 검증
+  </script>
+
+  <body>
+    <!-- Header -->
+    <nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-white shadow">
+      <div class="container d-flex justify-content-between align-items-center">
+          <a class="navbar-brand h1" href="index.html">
+              <i class='bx bx-palette bx-sm text-dark'></i>
+              <span class="text-dark h4">MUMA</span> <span class="text-primary h5">Museum Mate</span>
+          </a>
+          <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbar-toggler-success" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between"
+              id="navbar-toggler-success">
+              <div class="flex-fill mx-xl-5 mb-2">
+                  <ul class="nav navbar-nav d-flex justify-content-start mx-xl-5 text-center text-dark">
+                      <li class="nav-item">
+                          <a class="nav-link btn-outline-primary rounded-pill px-3" href="/">홈</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link btn-outline-primary rounded-pill px-3" href="/exhibition">전시</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link btn-outline-primary rounded-pill px-3" href="/gathering">함께 보러 가요</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link btn-outline-primary rounded-pill px-3" href="/myinfo">마이 페이지</a>
+                      </li>
+                  </ul>
+              </div>
+              <div class="navbar align-self-center d-flex">
+                      <div class="lolocontainer"></div>
+                      <div class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class='bx bx-bell bx-sm bx-tada-hover text-primary'></i>
+                      </div>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <div class = "alarmscontainer"></div>
+                      </ul>
+                  </div>
+                  
+              </div>
+          </div>
+      </div>
+  </nav>
+
+    <!-- Start Banner Hero -->
+    <section class="bg-light">
+      <div class="container py-4">
+        <div class="row align-items-center justify-content-between">
+          <!-- <div class="contact-header col-lg-4">
+                    <h1 class="h2 pb-3 text-primary">Contact</h1>
+                    <h3 class="h4 regular-400">Elit, sed do eiusmod tempor</h3>
+                    <p class="light-300">
+                        Vector illustration is from <a rel="nofollow" href="https://storyset.com/" target="_blank">StorySet</a>.
+                        Incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
+                    </p>
+                </div> -->
+          <div class="contact-img col-lg-5 align-items-end col-md-4">
+            <img src="./assets/img/3561113.jpg" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Banner Hero -->
+
+    <!-- Start Contact -->
+    <section class="container py-5">
+      <h1 class="col-12 col-xl-8 h2 text-left text-primary pt-3">나의 전시메이트 구하기</h1>
+      <h2 class="col-12 col-xl-8 h4 text-left regular-400">전시, 함께봐요</h2>
+      <p class="col-12 col-xl-8 text-left text-muted pb-5 light-300">
+        전시는 보고싶지만, 혼자 보기는 싫을 때. 전시를 함께 보러갈 나만의 전시메이트를 구해봐요.
+      </p>
+
+      <h3>📤</h3>
+      <h3>
+        <script>
+          localStorage.getItem('exhibitionName');
+          document.write(localStorage.getItem('exhibitionName'));
+        </script>
+      </h3>
+      
+
+      <div class="row pb-4">
+        <!-- Start 게시물 등록 Form -->
+        <div class="col-lg-8">
+          <form class="contact-form row" id="postGathering" method="post" action="#" role="form">
+            <div class="col-lg-6 mb-4">
+              <div class="form-floating">
+                <script>
+                  const exhibitionId = localStorage.getItem('exhibitionId');
+                  console.log(exhibitionId);
+                </script>
+                <!-- id값 안 보이게도 해줘야함 -->
+                <input
+                  type="text"
+                  class="form-control form-control-lg light-300"
+                  id="floatingexhibition"
+                  name="exhibitionId"
+                  placeholder="Name"
+                  value=""
+                  readonly="true"
+                  required
+                />
+                
+                <label for="floatingname light-300">양식에 맞춰 입력해주세요 🙂</label>
+              </div>
+            </div>
+            <!-- End Input 전시 -->
+
+            <div class="col-lg-6 mb-4">
+              <div class="form-floating">
+                <input
+                  type="number"
+                  min="2"
+                  max="10"
+                  class="form-control form-control-lg light-300"
+                  id="floatingmaxPeople"
+                  name="maxPeople"
+                  placeholder="Email"
+                  required
+                />
+                <label for="floatingemail light-300">최대 인원(2 ~ 10)</label>
+              </div>
+            </div>
+            <!-- End Input 최대 인원 -->
+
+            <div class="col-lg-6 mb-4">
+              <div class="form-floating">
+                <input
+                  type="datetime-local"
+                  class="form-control form-control-lg light-300"
+                  id="floatingmeetDateTime"
+                  name="meetDateTime"
+                  placeholder="Phone"
+                  required
+                />
+                <label for="floatingphone light-300">만나는 날짜 & 시간</label>
+              </div>
+            </div>
+            <!-- End Input 만나는 날짜 & 시간 -->
+
+            <div class="col-lg-6 mb-4">
+              <div class="form-floating">
+                <input
+                  type="text"
+                  class="form-control form-control-lg light-300"
+                  id="floatingmeetLocation"
+                  name="meetLocation"
+                  placeholder="Company Name"
+                  required
+                />
+                <label for="floatingcompany light-300">만나는 장소</label>
+              </div>
+            </div>
+            <!-- End Input 만나는 장소 -->
+
+            <div class="col-12">
+              <div class="form-floating mb-4">
+                <input
+                  type="text"
+                  class="form-control form-control-lg light-300"
+                  id="floatingtitle"
+                  name="title"
+                  placeholder="Subject"
+                  required
+                />
+                <label for="floatingsubject light-300">글 제목</label>
+              </div>
+            </div>
+            <!-- End Input 제목 -->
+
+            <div class="col-12">
+              <div class="form-floating mb-3">
+                <textarea
+                  class="form-control light-300"
+                  rows="8"
+                  placeholder="Message"
+                  id="floatingcontent"
+                  name="content"
+                  required
+                ></textarea>
+                <label for="floatingtextarea light-300">글 내용</label>
+              </div>
+            </div>
+            <!-- End Textarea 내용 -->
+
+            <div class="col-md-12 col-12 m-auto text-end">
+              <button
+                type="submit"
+                class="btn btn-secondary rounded-pill px-md-5 px-4 py-2 radius-0 text-light light-300"
+              >
+                작성 완료
+              </button>
+            </div>
+
+            <script>
+              const form = document.getElementById('postGathering');
+
+              form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const payload = new FormData(form);
+
+                console.log([...payload]);
+
+                postGathering(payload);
+
+                alert('전시 함께가요 글이 등록되었습니다!');
+
+                window.location.href = '/gathering';
+              });
+            </script>
+          </form>
+        </div>
+        <!-- End Contact Form -->
+      </div>
+    </section>
+    <!-- End Contact -->
+
+    <!--  Footer -->
+    <footer></footer>
+
+    <!-- Bootstrap -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Load jQuery require for isotope -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script>
+      var exhibitionIdValue = exhibitionId;
+      $('input[name=exhibitionId]').attr('value', exhibitionIdValue);
+    </script>
+    <!-- Isotope -->
+    <script src="assets/js/isotope.pkgd.js"></script>
+    <!-- Page Script -->
+    <script>
+      $(window).load(function () {
+        // init Isotope
+        var $projects = $('.projects').isotope({
+          itemSelector: '.project',
+          layoutMode: 'fitRows',
+        });
+        $('.filter-btn').click(function () {
+          var data_filter = $(this).attr('data-filter');
+          $projects.isotope({
+            filter: data_filter,
+          });
+          $('.filter-btn').removeClass('active');
+          $('.filter-btn').removeClass('shadow');
+          $(this).addClass('active');
+          $(this).addClass('shadow');
+          return false;
+        });
+      });
+      
+      window.addEventListener('DOMContentLoaded', function () {
+        renderinout();
+        renderAlarms();
+      });
+    </script>
+    <!-- Templatemo -->
+    <script src="assets/js/templatemo.js"></script>
+    <!-- Custom -->
+    <script src="assets/js/custom.js"></script>
+  </body>
+</html>

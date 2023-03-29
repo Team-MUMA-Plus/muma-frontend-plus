@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Museum Mate | Exhibition</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/palette.ico">
+    <!-- Load Require CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font CSS -->
+    <link href="assets/css/boxicon.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Load Tempalte CSS -->
+    <link rel="stylesheet" href="assets/css/templatemo.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <script src="assets/js/config.js"></script>
+
+<!--
+    
+TemplateMo 561 Purple Buzz
+
+https://templatemo.com/tm-561-purple-buzz
+
+-->
+</head>
+
+<body>
+    <!-- Header -->
+    <nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-white shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand h1" href="index.html">
+                <i class='bx bx-palette bx-sm text-dark'></i>
+                <span class="text-dark h4">MUMA</span> <span class="text-primary h5">Museum Mate</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbar-toggler-success" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between"
+                id="navbar-toggler-success">
+                <div class="flex-fill mx-xl-5 mb-2">
+                    <ul class="nav navbar-nav d-flex justify-content-start mx-xl-5 text-center text-dark">
+                        <li class="nav-item">
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="/">홈</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="/exhibition">전시</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="/gathering">함께 보러 가요</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="/myinfo">마이 페이지</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar align-self-center d-flex">
+                        <div class="lolocontainer"></div>
+                        <div class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class='bx bx-bell bx-sm bx-tada-hover text-primary'></i>
+                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <div class = "alarmscontainer"></div>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Close Header -->
+
+
+    <!-- Start Banner Hero -->
+    <div id="index_banner" class="banner-wrapper bg-light w-100 py-5">
+        <div class="banner-vertical-center-work container text-light d-flex justify-content-center align-items-center py-5 p-0">
+            <div class="banner-content col-lg-8 col-12 m-lg-auto text-center">
+                <h1 class="banner-heading h2 display-3 pb-5 semi-bold-600 typo-space-line-center">모든 전시회</h1>
+                <h3 class="h4 pb-2 regular-400">현재 전시중인 모든 유료 및 무료 전시회</h3>
+                <p class="banner-body pb-2 semi-bold-400 light-300">
+                    유료 전시회부터 무료 전시회까지.<br>
+                    다양한 전시회를 찾아보세요.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- End Banner Hero -->
+
+    <!-- Start Our Work -->
+    <section class="container py-5">
+        <button onclick="location.href='write-exhibition-form.html'" id="write-exhibition-button" class="btn btn-outline-light rounded-pill border-0 m-md-2 px-md-4 shadow">
+            전시 등록하기
+        </button>
+        <div class="row justify-content-center my-5">
+            <div class="filter-btns shadow-md rounded-pill text-center col-auto">
+                <a onclick=getExhibition(0) class="filter-btn btn rounded-pill btn-outline-primary border-0 m-md-2 px-md-4 active" data-filter=".exhibition" href="">모든 전시회</a>
+                <a onclick=getExhibition(1) class="filter-btn btn rounded-pill btn-outline-primary border-0 m-md-2 px-md-4" data-filter=".paidExhibition" href="">유료 전시회</a>
+                <a onclick=getExhibition(2) class="filter-btn btn rounded-pill btn-outline-primary border-0 m-md-2 px-md-4" data-filter=".freeExhibition" href="">무료 전시회</a>
+            </div>
+        </div>
+
+        <!-- 전체 및 유료 전시회 (business = 유료 전시회)-->
+        <div id="exhibition_container" class="conatiner row exhibitions gx-lg-5" style="height: auto;">
+   
+        </div>
+        <div class="row">
+            <div id="paging-container" class="btn-toolbar justify-content-center pb-4" role="toolbar" aria-label="Toolbar with button groups">
+            </div>
+        </div>
+    </section>
+    <!-- End Our Work -->
+
+    
+    <!-- Start Footer -->
+    <footer></footer>
+    <!-- End Footer -->
+
+
+    <!-- Bootstrap -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Lightbox -->
+    <script src="assets/js/fslightbox.js"></script>
+    <script>
+        // fsLightboxInstances['gallery'].props.loadOnlyCurrentSource = true;
+    </script>
+    <!-- Load jQuery require for isotope -->
+    <script src="assets/js/jquery.min.js"></script>
+    <!-- Isotope -->
+    <script src="assets/js/isotope.pkgd.js"></script>
+    <!-- Page Script -->
+    <script>
+        $(window).load(function() {
+            // init Isotope
+            var $exhibitions = $('.exhibitions').isotope({
+                itemSelector: '.exhibition',
+                layoutMode: 'fitRows'
+            });
+            $(".filter-btn").click(function() {
+                var data_filter = $(this).attr("data-filter");
+                $exhibitions.isotope({
+                    filter: data_filter
+                });
+                $(".filter-btn").removeClass("active");
+                $(".filter-btn").removeClass("shadow");
+                $(this).addClass("active");
+                $(this).addClass("shadow");
+                return false;
+            });
+        });
+    </script>
+    <!-- Templatemo -->
+    <script src="assets/js/templatemo.js"></script>
+    
+    <!-- <script src="assets/js/main.js"></script> -->
+    <!-- Custom -->
+
+    <script src="assets/js/custom.js"></script>
+    <script>
+		window.addEventListener('DOMContentLoaded', function () {
+      fetch(`${BASE_URL}/api/v1/exhibitions?sort=id`)
+      .then((res) => res.json())
+      .then((contents) => {
+        let html = '';
+        contents.result.content.forEach(element => {
+          html += `
+          <a href=${element.price !== "무료" ? "exhibition-single?id="+element.id : element.detailInfoUrl} target=${element.price === "무료" ? "_blank" : "_self"} class="col-sm-6 col-lg-4 text-decoration-none exhibition freeExhibition">
+              <div class="service-work overflow-hidden card mx-5 mx-sm-0 mb-5">
+                  <img class="card-img-top" src=${element.mainImgUrl} alt="...">
+                  <div class="card-body">
+                      <h5 class="card-title fw-bold text-dark"> ${element.name}</h5>
+                      <p class="card-text light-300 fw-bold text-dark">
+                          ${element.galleryLocation}
+                      </p>
+                      <p class="card-text light-300 fw-bold text-dark">
+                          ${element.startAt} ~ ${element.endAt}
+                      </p>
+                      <span class="text-decoration-none text-primary fw-bold light-300">
+                            자세히 보기 <i class='bx bxs-hand-right ms-1'></i>
+                        </span>
+                  </div>
+              </div>
+          </a>
+          `;
+        });
+        // 페이지네이션
+        const pageHtml = `
+            <div class="btn-group me-2" role="group" aria-label="First group">
+                <button ${contents.result.pageable.pageNumber === 0 ? 'disabled' : ''} onclick=getPageExhibition(${contents.result.pageable.pageNumber - 1}) type="button" class="btn btn-secondary text-white">Previous</button>
+            </div>
+            ${
+                Array.from({ length: contents.result.totalPages }, (_, i) => i + 1)
+                    .map((idx) => {
+                        if (contents.result.pageable.pageNumber + 1 === idx) {
+                            return `
+                            <div class="btn-group me-2" role="group" aria-label="Second group">
+                                <button onclick=getPageExhibition (${idx-1}) type="button" class="btn btn-light">${idx}</button>
+                            </div>
+                            `
+                        }
+                        return `
+                        <div class="btn-group me-2" role="group" aria-label="Second group">
+                            <button onclick=getPageExhibition(${idx-1}) type="button" class="btn btn-secondary text-white">${idx}</button>
+                        </div>
+                        `
+                    }).join('')
+            }
+            <div class="btn-group" role="group" aria-label="Third group">
+                <button ${contents.result.pageable.pageNumber + 1 === contents.result.totalPages ? 'disabled' : ''} onclick=getPageExhibition(${contents.result.pageable.pageNumber + 1}) type="button" class="btn btn-secondary text-white">Next</button>
+            </div>
+        `
+        const div = document.getElementById('exhibition_container');
+        div.innerHTML = html;
+        div.setAttribute('style', 'height: auto;')
+
+        const pageDiv = document.getElementById('paging-container')
+        pageDiv.innerHTML = pageHtml
+      })
+      .catch((err) => {
+        console.log('err', err)
+      })
+    });
+	</script>
+    <!-- 유료 무료에 따른 전시회 구분-->
+    <script>
+        function getExhibition(price = 0) {
+            let p;
+            if (price === 0) {
+                window.history.replaceState('', '', window.location.origin + '/exhibition');
+                p = ""
+            } else if (price === 1) {
+                window.history.replaceState('', '', window.location.origin + '/exhibition?price=유료');
+                p = "price=유료"
+            } else if (price === 2) {
+                window.history.replaceState('', '', window.location.origin + '/exhibition?price=무료');
+                p = "price=무료"
+            }
+            fetch(`${BASE_URL}/api/v1/exhibitions?sort=id&${p}`)
+      .then((res) => res.json())
+      .then((contents) => {
+        console.log(contents.result.content)
+        let html = '';
+        contents.result.content.forEach(element => {
+          html += `
+          <a href=${element.price !== "무료" ? "exhibition-single?id="+element.id : element.detailInfoUrl} target=${element.price === "무료" ? "_blank" : "_self"} class="col-sm-6 col-lg-4 text-decoration-none exhibition freeExhibition">
+            <div class="service-work overflow-hidden card mx-5 mx-sm-0 mb-5">
+                  <img class="card-img-top" src=${element.mainImgUrl} alt="...">
+                  <div class="card-body">
+                      <h5 class="card-title fw-bold text-dark"> ${element.name}</h5>
+                      <p class="card-text light-300 fw-bold text-dark">
+                          ${element.galleryLocation}
+                      </p>
+                      <p class="card-text light-300 fw-bold text-dark">
+                          ${element.startAt} ~ ${element.endAt}
+                      </p>
+                      <span class="text-decoration-none text-primary fw-bold light-300">
+                            자세히 보기 <i class='bx bxs-hand-right ms-1'></i>
+                        </span>
+                  </div>
+              </div>
+          </a>
+          `;
+        });
+        //페이지네이션
+        const pageHtml = `
+            <div class="btn-group me-2" role="group" aria-label="First group">
+                <button ${contents.result.pageable.pageNumber === 0 ? 'disabled' : ''} onclick=getPageExhibition(${contents.result.pageable.pageNumber - 1}) type="button" class="btn btn-secondary text-white">Previous</button>
+            </div>
+            ${
+                Array.from({ length: contents.result.totalPages }, (_, i) => i + 1)
+                    .map((idx) => {
+                        if (contents.result.pageable.pageNumber + 1 === idx) {
+                            return `
+                            <div class="btn-group me-2" role="group" aria-label="Second group">
+                                <button onclick=getPageExhibition(${idx-1}) type="button" class="btn btn-light">${idx}</button>
+                            </div>
+                            `
+                        }
+                        return `
+                        <div class="btn-group me-2" role="group" aria-label="Second group">
+                            <button onclick=getPageExhibition(${idx-1}) type="button" class="btn btn-secondary text-white">${idx}</button>
+                        </div>
+                        `
+                    }).join('')
+            }
+            <div class="btn-group" role="group" aria-label="Third group">
+                <button ${contents.result.pageable.pageNumber + 1 === contents.result.totalPages ? 'disabled' : ''} onclick=getPageExhibition(${contents.result.pageable.pageNumber + 1}) type="button" class="btn btn-secondary text-white">Next</button>
+            </div>
+        `
+        const div = document.getElementById('exhibition_container');
+        div.innerHTML = html;
+        div.setAttribute('style', 'height: auto;')
+
+        const pageDiv = document.getElementById('paging-container')
+        pageDiv.innerHTML = pageHtml
+      })
+      .catch((err) => {
+        console.log('err', err)
+      })
+        }
+    </script>
+    <!-- 전시회(유료-무료-전체)페이지에서 해당 페이지안에서 이동하는 코드 -->
+    <script>
+        function getPageExhibition(page = 1) {
+            const url = new URLSearchParams(window.location.href.split('?')[1])
+            const price = url.get('price')
+
+            fetch(`${BASE_URL}/api/v1/exhibitions?sort=id&page=${page}&price=${price}`)
+      .then((res) => res.json())
+      .then((contents) => {
+        let html = '';
+        console.log(contents.result)
+        contents.result.content.forEach(element => {
+          html += `
+          <a href=${element.price !== "무료" ? "exhibition-single?id="+element.id : element.detailInfoUrl} target=${element.price === "무료" ? "_blank" : "_self"} class="col-sm-6 col-lg-4 text-decoration-none exhibition freeExhibition">
+            <div class="service-work overflow-hidden card mx-5 mx-sm-0 mb-5">
+                  <img class="card-img-top" src=${element.mainImgUrl} alt="...">
+                  <div class="card-body">
+                      <h5 class="card-title fw-bold text-dark"> ${element.name}</h5>
+                      <p class="card-text light-300 fw-bold text-dark">
+                          ${element.galleryLocation}
+                      </p>
+                      <p class="card-text light-300 fw-bold text-dark">
+                          ${element.startAt} ~ ${element.endAt}
+                      </p>
+                      <span class="text-decoration-none text-primary fw-bold light-300">
+                            자세히 보기 <i class='bx bxs-hand-right ms-1'></i>
+                        </span>
+                  </div>
+              </div>
+          </a>
+          `;
+        });
+
+        const pageHtml = `
+            <div class="btn-group me-2" role="group" aria-label="First group">
+                <button ${contents.result.pageable.pageNumber === 0 ? 'disabled' : ''} onclick=getPageExhibition(${contents.result.pageable.pageNumber - 1}) type="button" class="btn btn-secondary text-white">Previous</button>
+            </div>
+            ${
+                Array.from({ length: contents.result.totalPages }, (_, i) => i + 1)
+                    .map((idx) => {
+                        if (contents.result.pageable.pageNumber + 1 === idx) {
+                            return `
+                            <div class="btn-group me-2" role="group" aria-label="Second group">
+                                <button onclick=getPageExhibition(${idx-1}) type="button" class="btn btn-light">${idx}</button>
+                            </div>
+                            `
+                        }
+                        return `
+                        <div class="btn-group me-2" role="group" aria-label="Second group">
+                            <button onclick=getPageExhibition(${idx-1}) type="button" class="btn btn-secondary text-white">${idx}</button>
+                        </div>
+                        `
+                    }).join('')
+            }
+            <div class="btn-group" role="group" aria-label="Third group">
+                <button ${contents.result.pageable.pageNumber + 1 === contents.result.totalPages ? 'disabled' : ''} onclick=getPageExhibition(${contents.result.pageable.pageNumber + 1}) type="button" class="btn btn-secondary text-white">Next</button>
+            </div>
+        `
+        const div = document.getElementById('exhibition_container');
+        div.innerHTML = html;
+        div.setAttribute('style', 'height: auto;')
+
+        const pageDiv = document.getElementById('paging-container')
+        pageDiv.innerHTML = pageHtml
+      })
+      .catch((err) => {
+        console.log('err', err)
+      })
+        }
+        
+        window.addEventListener('DOMContentLoaded', function () {
+        renderinout();
+        renderAlarms();
+      });  
+    </script>
+</body>
+
+</html>

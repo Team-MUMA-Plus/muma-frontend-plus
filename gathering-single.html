@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Museum Mate | Gathering-single</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/palette.ico">
+    <!-- Load Require CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font CSS -->
+    <link href="assets/css/boxicon.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Load Tempalte CSS -->
+    <link rel="stylesheet" href="assets/css/templatemo.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <script src="assets/js/config.js"></script>
+<!--
+    
+TemplateMo 561 Purple Buzz
+
+https://templatemo.com/tm-561-purple-buzz
+
+-->
+</head>
+
+<body>
+    <!-- Header -->
+    <nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-white shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand h1" href="index.html">
+                <i class='bx bx-palette bx-sm text-dark'></i>
+                <span class="text-dark h4">MUMA</span> <span class="text-primary h5">Museum Mate</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbar-toggler-success" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between"
+                id="navbar-toggler-success">
+                <div class="flex-fill mx-xl-5 mb-2">
+                    <ul class="nav navbar-nav d-flex justify-content-start mx-xl-5 text-center text-dark">
+                        <li class="nav-item">
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="/">홈</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="/exhibition">전시</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="/gathering">함께 보러 가요</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="/myinfo">마이 페이지</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar align-self-center d-flex">
+                        <div class="lolocontainer"></div>
+                        <div class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class='bx bx-bell bx-sm bx-tada-hover text-primary'></i>
+                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <div class = "alarmscontainer"></div>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Start Pricing Horizontal Section -->
+    <section class="bg-light pt-sm-0 py-5">
+        <div class="container py-5">
+
+        <h1 id="title"class="h2 semi-bold-600 text-center mt-2">제목 자리</h1>
+        <p id="content" class="text-center pb-5 light-300">내용 자리 : Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut facilisis.</p>
+
+        <!-- Start Pricing Horizontal -->
+        <div class="pricing-horizontal row col-10 m-auto d-flex shadow-sm rounded overflow-hidden bg-white">
+
+            <div class="pricing-horizontal-icon col-md-3 text-center bg-secondary text-light py-4 ">
+                <img id="exhibitionMainUrl" src="http://ticketimage.interpark.com/Play/image/large/22/22015433_p.gif" class="exhibition_poster_image g-2 img-thumbnail">
+            </div>
+            
+            <div class="pricing-horizontal-body offset-lg-1 col-md-5 col-lg-4 d-flex align-items-center p-3">
+                <ul class="text-left px-4 list-unstyled mb-0 light-300">
+                    <li id="exhibitionName" ><i class="bx bxs-circle me-2"></i>전시회 이름 : </li>
+                    <li id="meetDateTime"><i class="bx bxs-circle me-2"></i>이때 만나요: </li>
+                    <li id="meetLocation" ><i class="bx bxs-circle me-2"></i>여기서 만나요: </li>
+                    <li id="maxPeople" ><i class="bx bxs-circle me-2"></i>모집 인원: </li>
+                    <li id="userName">
+                        <i class="bx bxs-circle me-2"></i>모임장 : 
+                    </li>
+                    <li>
+                        <div class="row mt-4 mt-sm-2">
+                            <div id="people" class="col-6 text-right">%</div>
+                        </div>
+                        <div class="progress">
+                            <div id="progress-percent" class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="pricing-horizontal-tag col-md-4 text-center pt-3 d-flex align-items-center">
+                <div class="w-100 light-300">
+                    <p id="currentPeople">현재 인원 : </p>
+                    <a id="gatheringId" onclick="newTabClick()" class="btn rounded-pill px-4 btn-outline-primary mb-3">신청자 목록</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row col-10 m-auto d-flex overflow-hidden " style="justify-content: right;">
+            <div style="width:150px; height:100px; float:right; text-align: right; padding: 0;" class="enroll">
+                <a href="/gathering" class="btn rounded-pill px-3 btn-outline-primary mb-3">더 둘러볼래요 👀</a>
+            </div>
+            <div style="width:150px; height:100px; float:right; text-align: right; padding: 0;" class="enroll">
+                <a href="javascript:void(0);" onclick="enrollGathering()" class="btn rounded-pill px-3 btn-outline-primary mb-3">신청하기!🎉</a>
+            </div>
+        </div>
+
+        
+        <!-- End Pricing Horizontal -->
+        
+        
+        
+        
+    
+    </section>
+
+    <!--  Footer -->
+    <footer></footer>
+
+
+    <!-- Bootstrap -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Templatemo -->
+    <!-- <script src="assets/js/templatemo.js"></script> -->
+    <!-- Custom -->
+    <script src="assets/js/custom.js"></script>
+    <script>
+        var gatheringId = new URL(location.href).searchParams.get('id');
+
+        let childWindow;
+        function newTabClick() {
+            var hiddenField = document.createElement("input");
+            hiddenField.setAttribute("type", "hidden");
+            hiddenField.setAttribute("name", "test-id");
+            hiddenField.setAttribute("id", "test-id");
+            hiddenField.setAttribute("value", gatheringId);
+            document.body.appendChild(hiddenField);
+            
+            var nWidth = "900";
+            var nHeight = "768";
+
+            // 듀얼 모니터 고려한 윈도우 띄우기
+            var curX = window.screenLeft;
+            var curY = window.screenTop;
+            var curWidth = document.body.clientWidth;
+            var curHeight = document.body.clientHeight;
+
+            var nLeft = curX + (curWidth / 2) - (nWidth / 2);
+            var nTop = curY + (curHeight / 2) - (nHeight / 2);
+
+            var strOption = "";
+            strOption += "left=" + nLeft + "px,";
+            strOption += "top=" + nTop + "px,";
+            strOption += "width=" + nWidth + "px,";
+            strOption += "height=" + nHeight + "px,";
+            strOption += "toolbar=no,menubar=no,location=no,";
+            strOption += "resizable=yes,status=yes";
+
+            childWindow = window.open("enroll-list", "childWindow", strOption);
+        }
+
+        let gatheringResponse = fetch(`${BASE_URL}/api/v1/gatherings/` + gatheringId, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include'
+        }).then(response => response.json())
+        .then(data => {
+            console.log(data);
+            // console.log(document.getElementById("content").innerHTML);
+
+            document.getElementById("title").innerHTML = data.result.title;
+            document.getElementById("content").innerHTML = data.result.content;
+            document.getElementById("exhibitionMainUrl").src = data.result.exhibitionMainUrl;
+            document.getElementById("exhibitionName").innerHTML = '<i class="bx bxs-circle me-2"></i>' + data.result.exhibitionName;
+            document.getElementById("meetDateTime").innerHTML = '<i class="bx bxs-circle me-2"></i>이때 만나요: ' + data.result.meetDateTime;
+            document.getElementById("meetLocation").innerHTML = '<i class="bx bxs-circle me-2"></i>여기서 만나요: ' + data.result.meetLocation;
+            document.getElementById("maxPeople").innerHTML = '<i class="bx bxs-circle me-2"></i>모집 인원: ' + data.result.maxPeople + '명';
+            document.getElementById("userName").innerHTML = '<i class="bx bxs-circle me-2"></i>모임장: ' + data.result.userName;
+            document.getElementById("currentPeople").innerHTML = '<p id="currentPeople">현재 인원</p>' + data.result.currentPeople + '명';
+            document.getElementById("people").innerHTML = '(' + data.result.currentPeople + '/' + data.result.maxPeople + ')';
+            document.getElementById('progress-percent').style.width = (data.result.currentPeople/data.result.maxPeople)*100 + '%';
+            // console.log(data.result.currentPeople/data.result.maxPeople*100);
+        });
+
+        async function enrollGathering(){
+            let url = `${BASE_URL}/api/v1/gatherings/${gatheringId}/enroll`
+            try {
+                let res = await fetch(url, {
+                    method: 'post',
+                    credentials: 'include'
+                });
+                if(res.status == 200){
+                    alert("신청이 완료되었습니다!");
+                    return;
+                }
+                if(res.status == 401){
+                    alert("로그인을 해주세요.")
+                    window.location.href="/login";
+                    return;
+                }
+                res = await res.json()
+                if(res.result.errorCode == "DUPLICATED_ENROLL"){
+                    alert("이미 신청된 모집글입니다!")
+                    return;
+                }
+            } catch (error) {
+                console.log(error);
+                alert("Request Error!");
+            }
+        }
+
+    </script>
+
+    <script type="text/javascript" src="assets/js/custom.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+        renderinout();
+        renderAlarms();
+      });
+    </script>
+
+</body>
+
+</html>

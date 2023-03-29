@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Login</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="apple-touch-icon" href="assets/img/apple-icon.png" />
+        <link rel="shortcut icon" type="image/x-icon" href="assets/img/palette.ico" />
+        <!-- Font -->
+        <link href="assets/css/boxicon.min.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+        <!-- Load Require CSS -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+        <!-- Font CSS -->
+        <link href="assets/css/boxicon.min.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.css" />
+        <script src="https://kit.fontawesome.com/6d10db4e8e.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.js"></script>
+        <!-- Load Tempalte CSS -->
+        <link rel="stylesheet" href="assets/css/templatemo.css" />
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="assets/css/custom.css" />
+        <link rel="stylesheet" href="assets/css/login.css" />
+        <!-- config -->
+        <script defer src="assets/js/config.js"></script>
+    </head>
+    <script src="/assets/js/authorization/cookieutils.js"></script>
+    <script>
+        <!-- 검증 -->
+    </script>
+
+    <body>
+        <nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-white shadow">
+            <div class="container d-flex justify-content-between align-items-center">
+                <a class="navbar-brand h1" href="index.html">
+                    <i class='bx bx-palette bx-sm text-dark'></i>
+                    <span class="text-dark h4">MUMA</span> <span class="text-primary h5">Museum Mate</span>
+                </a>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbar-toggler-success" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        
+                <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between"
+                    id="navbar-toggler-success">
+                    <div class="flex-fill mx-xl-5 mb-2">
+                        <ul class="nav navbar-nav d-flex justify-content-start mx-xl-5 text-center text-dark">
+                            <li class="nav-item">
+                                <a class="nav-link btn-outline-primary rounded-pill px-3" href="/">홈</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn-outline-primary rounded-pill px-3" href="/exhibition">전시</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn-outline-primary rounded-pill px-3" href="/gathering">함께 보러 가요</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn-outline-primary rounded-pill px-3" href="/myinfo">마이 페이지</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="navbar align-self-center d-flex">
+                            <div class="lolocontainer"></div>
+                            <div class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class='bx bx-bell bx-sm bx-tada-hover text-primary'></i>
+                            </div>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <div class = "alarmscontainer"></div>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div id="wrapper">
+            <section class="login-section">
+                <img class="main-img"></img>
+                <!-- Heading -->
+                <div class="body__title">
+                    <h4>반갑읍미다<br />여러분의 무지엄메이또임니다 🥸</h4>
+                </div>
+
+                <!-- Links -->
+                <ul class="links">
+                    <li>
+                        <a href="#" id="signin">로그인</a>
+                    </li>
+                    <li>
+                        <a href="#" id="signup">회원 가입</a>
+                    </li>
+                    <li>
+                        <a href="#" id="reset">RESET</a>
+                    </li>
+                </ul>
+                <div class="form_wrap_line">
+                    <!-- email input -->
+                    <div class="first-input input__block first-input__block">
+                        <input type="email" placeholder="이메일" class="input" id="email" />
+                    </div>
+
+                    <!-- password input -->
+                    <div class="input__block">
+                        <input type="password" placeholder="비밀번호" class="input" id="password" />
+                    </div>
+                </div>
+                <!-- repeat password input -->
+                <div class="input__block">
+                    <input type="password" placeholder="비밀번호 확인" class="input repeat__password" id="repeat__password" />
+                </div>
+
+                <div class="input__block">
+                    <input type="text" placeholder="이름" class="input name-input" id="name" />
+                </div>
+
+                <div class="input__block">
+                    <input type="text" placeholder="닉네임" class="input userName-input" id="nickname" />
+                </div>
+
+                <div class="input__block">
+                    <input type="text" placeholder="우편번호" class="input address-input readonly" id="sample6_postcode" readonly/>
+                </div>
+
+                <div class="input__block">
+                    <input type="text" placeholder="주소" class="input address-input readonly" id="sample6_address" readonly/>
+                </div>
+
+                <div class="input__block">
+                    <input type="text" placeholder="참고항목" class="input address-input readonly" id="sample6_extraAddress" readonly/>
+                </div>
+
+                <div class="input__block">
+                    <input type="text" placeholder="상세주소" class="input address-input" id="sample6_detailAddress" />
+                </div>
+
+                <div class="input__block">
+                    <button class="address__btn" id="address__btn" onclick=checkPostParams()>
+                        <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                        주소 찾기
+                    </button>
+                </div>
+
+                <div class="input__block">
+                    <input type="text" placeholder="생년월일(6자리)" class="input birth-input" id="birth" />
+                </div>
+
+                <div class="input__block">
+                    <input type="text" placeholder="전화번호('-' 제외)" class="input phonenum-input" id="phoneNumber" />
+                </div>
+
+                <!-- sign in button -->
+                <div id="sign-btn">
+                    <button class="signin__btn" onclick=login()>
+                        <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                        Sign in
+                    </button>
+                </div>  
+
+                <!-- separator -->
+                <div class="separator">
+                    <p>OR</p>
+                </div>
+
+                <div class="social-login">
+                    <!-- google button -->
+                    <button class="google__btn" href="">
+                        <i class="fa-brands fa-google"></i>
+                        Sign in with Google
+                    </button>
+                    <!-- naver button -->
+                    <button class="naver__btn">
+                        <i class="fa fa-naver"></i>
+                        Sign in with Naver
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <!-- footer -->
+        <footer></footer>
+
+        <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+        <!-- Bootstrap -->
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <!-- Load jQuery require for isotope -->
+        <script src="assets/js/jquery.min.js"></script>
+        <!-- Isotope -->
+        <script src="assets/js/isotope.pkgd.js"></script>
+        <!-- Page Script -->
+        <script>
+            $(window).load(function () {
+                // init Isotope
+                var $projects = $('.projects').isotope({
+                    itemSelector: '.project',
+                    layoutMode: 'fitRows',
+                });
+                $('.filter-btn').click(function () {
+                    var data_filter = $(this).attr('data-filter');
+                    $projects.isotope({
+                        filter: data_filter,
+                    });
+                    $('.filter-btn').removeClass('active');
+                    $('.filter-btn').removeClass('shadow');
+                    $(this).addClass('active');
+                    $(this).addClass('shadow');
+                    return false;
+                });
+            });
+            window.addEventListener('DOMContentLoaded', function () {
+                    renderinout();
+                    renderAlarms();
+            });
+        </script>
+        <!-- Templatemo -->
+        <script src="assets/js/templatemo.js"></script>
+        <!-- Custom -->
+        <script defer src="assets/js/custom.js"></script>
+        <!-- login.js -->
+        <script defer src="assets/js/authorization/login.js"></script>
+        <!-- <script defer src="assets/js/authorization/cookieutils.js"></script> -->
+    </body>
+</html>

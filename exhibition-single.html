@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Museum Mate | Exhibition-single</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/palette.ico">
+    <!-- Load Require CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font CSS -->
+    <link href="assets/css/boxicon.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Load Tempalte CSS -->
+    <link rel="stylesheet" href="assets/css/templatemo.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <script src="assets/js/config.js"></script>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet" /> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.css" />
+    <!-- <script src="https://kit.fontawesome.com/6d10db4e8e.js" crossorigin="anonymous"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-white shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand h1" href="index.html">
+                <i class='bx bx-palette bx-sm text-dark'></i>
+                <span class="text-dark h4">MUMA</span> <span class="text-primary h5">Museum Mate</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbar-toggler-success" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between"
+                id="navbar-toggler-success">
+                <div class="flex-fill mx-xl-5 mb-2">
+                    <ul class="nav navbar-nav d-flex justify-content-start mx-xl-5 text-center text-dark">
+                        <li class="nav-item">
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="/">홈</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="/exhibition">전시</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="/gathering">함께 보러 가요</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="/myinfo">마이 페이지</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar align-self-center d-flex">
+                        <div class="lolocontainer"></div>
+                        <div class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class='bx bx-bell bx-sm bx-tada-hover text-primary'></i>
+                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <div class = "alarmscontainer"></div>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Close Header -->
+
+
+    <!-- 스타트 배너 -->
+    <div id="index_banner" class="bg-light w-100">
+        <div
+            class="container-fluid text-light d-flex justify-content-center align-items-center border-0 rounded-0 p-0 py-5">
+            <div class="banner-content col-lg-8 m-lg-auto text-center py-5 px-3">
+                <h1 class="banner-heading h2 pb-5 typo-space-line-center">전시회 상세 조회</<h1>
+                </h1>
+                <h3 class="h4 pb-2 light-300">전시회에 대한 모든 것</h3>
+                <p class="banner-footer light-300">
+                    전시회에 대한 자세한 정보를 찾아 보세요!
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- 스타트 배너 끝 -->
+
+
+    <!-- 상세조회 화면 구성 -->
+    <section id="exhibition-container" class="container py-5">
+
+    </section>
+
+
+    <!-- 리뷰 기능 -->
+    <section  class="container py-5">
+
+        <!-- Start Comment -->
+        <div class="row justify-content-center">
+            <div class="worksingle-comment-heading col-8 m-auto pb-3">
+                <h4 class="worksingle-comment-heading h4 pb-3 mt-3 fw-bold light-300 typo-space-line">리뷰</h4>
+            </div>
+        </div>
+        <div id="comment-container">
+
+        </div>
+
+        <!-- 리뷰 등록 -->
+        <div class="row pb-4">
+            <div class="worksingle-comment-footer col-lg-8 m-auto">
+                <h4 class="worksingle-comment-heading h4 pb-3 mt-3 fw-bold light-300 typo-space-line">리뷰 등록</h4>
+                <!-- <form class="col-md-12 m-auto" method="POST" action="#" role="form"> -->
+
+                <div class="form-group mt-3">
+                    <label for="inputdate">방문 날짜: </label><input class="form-control form-control-lg light-300 mb-2" type="date" id="inputdate" name="inputdate" style="width: 200px; font-size: 14px; height:20px; display:inline; padding:0px 3px; margin-left: 5px;">
+                    <textarea class="form-control form-control-lg light-300" id="inputtitle" name="inputtitle" placeholder="제목을 입력하세요" rows="1"></textarea>
+                    <textarea class="form-control form-control-lg light-300" id="inputmessage" name="inputmessage" placeholder="내용을 입력하세요" rows="5"></textarea>
+                </div>
+                <select id="starValue">
+                    <option value="1">&#11088;</option>
+                    <option value="2">&#11088;&#11088;</option>
+                    <option value="3">&#11088;&#11088;&#11088;</option>
+                    <option value="4">&#11088;&#11088;&#11088;&#11088;</option>
+                    <option value="5">&#11088;&#11088;&#11088;&#11088;&#11088;</option>
+                </select>
+
+                <div class="form-row pt-2">
+                    <div class="col-md-12 col-10 text-end">
+                        <button type="button" onclick=postWithAuth() class="btn btn-secondary text-white px-md-4 px-2 py-md-3 py-1 radius-0 light-300">리뷰 등록</button>
+                    </div>
+                </div>
+                <!-- </form> -->
+            </div>
+        </div>
+
+
+        <!-- End Comment Form -->
+    </section>
+
+    <!-- End Work Sigle -->
+
+    <!-- Start Footer -->
+    <footer></footer>
+    <!-- End Footer -->
+
+
+    <!-- Bootstrap -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Load jQuery require for Page Script -->
+    <script src="assets/js/jquery.min.js"></script>
+    <!-- Page Script -->
+    <script>
+        $(window).load(function () {
+            // Slide
+            $('.templatemo-slide-link').click(function () {
+                var this_href = $(this).attr('href');
+                $('#templatemo-slide-link-target img').attr('src', this_href);
+                return false;
+            });
+            // End Slide
+        });
+    </script>
+    <!-- Templatemo -->
+    <script src="assets/js/templatemo.js"></script>
+    <!-- Custom -->
+    <script src="assets/js/custom.js"></script>
+
+
+    <!-- 전체 페이지 구성 -->
+    <script>
+        const queryString = window.location.href.split('?')[1]
+        const id = queryString.split('=')[1]
+        console.log(window.localStorage.getItem('token'))
+        fetch(`${BASE_URL}/api/v1/exhibitions/${id}`)
+            .then(res => res.json())
+            .then(contents => {
+                console.log(contents.result)
+                const html = `
+            <div class="row pt-5">
+                <div class="worksingle-content col-lg-8 m-auto text-left justify-content-center">
+                    <h2 class="worksingle-heading h3 fw-bold pb-3 light-300 typo-space-line">${contents.result.name}</h2><br>
+                
+                    <div id="div_root">
+                        <div id="div_img">
+                            <div><img src=${contents.result.mainImgUrl} /></div>
+                            
+                        </div>
+                        <div id="div_spec">
+                            <h6 class>장소&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${contents.result.galleryLocation}<h6><br>
+                            <h6 class>기간&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${contents.result.startAt} ~ ${contents.result.endAt}<h6><br>
+                            <h6 class>관람연령 &nbsp;&nbsp;${contents.result.ageLimit}<h6><br>
+                            <h6 class>가격&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${contents.result.price}<h6><br>
+                            <div>
+                                <span style=''>&#128278;</span><button id="bookmarkBtn" style="margin-left:1rem; border:none;">북마크</button>
+                            </div><br>
+                            <div>
+                                <span id="exhibitionInfo" style=''>&#128149;</span><button type="button" onclick="submitExhibitionName(${contents.result.id}, '${contents.result.name}')" style="margin-left:1rem; border:none;">함께 봐요!</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="worksingle-content col-lg-8 m-auto mt-5 text-left justify-content-center">
+                    <h4 class="worksingle-heading h4 pb-3 fw-bold light-300 typo-space-line">공지사항</h4>
+                        <p>${contents.result.detailInfo}</p>
+                </div>
+
+                <div class="worksingle-content col-lg-8 m-auto text-left justify-content-center">
+                    <h4 class="worksingle-heading h4 pb-3 fw-bold light-300 typo-space-line">상세정보</h4>
+                <div>${
+                    contents.result.detailInfoImgUrl 
+                        ? '<img src="' + contents.result.detailInfoImgUrl.split(',')[0] + '" />'
+                        : '<div></div>'
+                }</div>
+                </div>
+                           
+                <div class="worksingle-content col-lg-8 m-auto mt-3 text-left justify-content-center">
+                    <h4 class="worksingle-heading h4 pb-3 fw-bold light-300 typo-space-line">안내사항</h4>
+                        <p>${contents.result.notice}</p>
+                        <div>${
+                            contents.result.noticeImgUrl 
+                                ? '<img src="' + contents.result.noticeImgUrl.split(',')[0] + '" />'
+                                : '<div></div>'
+                        }</div>
+                    </div>
+                </div>
+                <div class="worksingle-content col-lg-8 m-auto mt-3 text-left justify-content-center">
+                    <h4 class="worksingle-heading h4 pb-3 fw-bold light-300 typo-space-line">관람객 통계</h4>
+                    <p> &#128104; ${contents.result.statMale} &nbsp;&nbsp; &#128105; ${contents.result.statFemale}</p>
+                        <p> &#128202; 10대 : ${contents.result.statAge10}</p>
+                        <p> &#128202; 20대 : ${contents.result.statAge20}</p>
+                        <p> &#128202; 30대 : ${contents.result.statAge30}</p>
+                        <p> &#128202; 40대 : ${contents.result.statAge40}</p>
+                        <p> &#128202; 50대 : ${contents.result.statAge50}</p>
+                </div>
+            </div>
+            `
+
+                const div = document.getElementById('exhibition-container')
+                div.innerHTML = html;
+
+                // const token = window.localStorage.getItem('token')
+                const queryString1 = window.location.href.split('?')[1]
+                const id1 = queryString.split('=')[1]
+                const btn = document.getElementById('bookmarkBtn')
+                // console.log(token)
+                btn.addEventListener('click', function() {
+                    fetch(`${BASE_URL}/api/v1/exhibitions/${id1}/bookmarks`, {
+                        method: 'POST',
+                        mode: 'cors',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        credentials: 'include'
+                    }).then((res) => res.json())
+                    .then((res) => {
+                        if (res.resultCode == "SUCCESS"){
+                            Swal.fire({
+                                title: `${res.result.message}`,
+                                icon: 'success'})
+                        } else if(res.result.errorCode == "TOKEN_NOT_FOUND"){
+                            Swal.fire({
+                                title: `북마크를 하려면 로그인을 해주세요!`,
+                                icon: 'error'});
+                        }
+                        console.log(res.result)
+                    })
+                    .catch(err => {
+                        console.log(err)
+                    }) 
+                })
+            })
+
+    function submitExhibitionName(id, name) {
+        console.log(name);
+        localStorage.setItem('exhibitionId', id);
+        localStorage.setItem('exhibitionName',name);
+        window.location.href='/gathering-new?id=' + id;
+    }
+
+    function loadComments(){
+        const queryString1 = window.location.href.split('?')[1]
+        const id1 = queryString.split('=')[1]
+        fetch(`${BASE_URL}/api/v1/reviews/${id1}/reviews`)
+            .then(res => res.json())
+            .then(contents => {
+                let html = ''
+                for (const content of contents.result.content) {
+                    let date = getDate(content.createdAt);
+                    html += `
+                        <div class="row pb-4">
+                        <div class="worksingle-comment-body col-md-8 m-auto">
+                            <div class="d-flex">
+                                <div class="comment-body">
+                                        <div class="comment-header d-flex justify-content-between ms-3">
+                                            <div class="header text-start">
+                                                <div class="h6">${content.userName} ${
+                                                        // content.star
+                                                        Array.from({ length: content.star }, (_, i) => `<span style=''>&#11088;</span>`).join('')
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="footer" style="width: 53rem;">
+                                            <div class="card-body border ms-3 light-300">
+                                                <div class="mb-2" style="color: #A7A7A7;font-size: 12px;">${content.visitedDate} 방문</div>
+                                                <div class= "card-title fw-bold">${content.title}</div>
+                                                <div class= m-auto mt-4>${content.content}</div>
+                                            </div>
+                                            <div style = text-align:right>
+                                            <p class="text-muted light-300">작성일 : ${date}</p>
+                                            </div>
+                                            <div class="deleteBtn-container">
+                                                <div style="text-align: right;">
+                                                    <a href="javascript:void(0);" class="delete_button" onclick="deleteReview(${content.id})" id="${content.id}" type="button">삭제</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                }
+                
+                const div = document.getElementById('comment-container')
+                div.innerHTML = html;
+            })
+        }
+        loadComments();
+
+
+    function deleteReview(id){
+        try {                
+            let res = fetch(`${BASE_URL}/api/v1/reviews/`+id, {
+                method: 'DELETE',
+                mode: 'cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                credentials: 'include'
+            })
+            .then((response) => {
+                if(response.status == 401) {
+                    Swal.fire({
+                        title: '삭제 권한이 없습니다',
+                        icon:'error'});
+                } else {
+                    Swal.fire({
+                        title: '삭제 완료하였습니다',
+                        icon:'success'})
+                        .then((result)=>{
+                            loadComments();
+                        });
+                }
+                })
+            }
+        catch (error) {
+            console.log(error);
+            alert("올바르지 않은 접근입니다!");
+        }
+    }
+
+</script>
+   
+<script>
+    async function postWithAuth() {
+    // let url = base_url + detail_url;
+    const queryStrings = window.location.href.split('?')[1];
+    const id = queryString.split('=')[1]
+
+    const dateArea = document.getElementById('inputdate')
+    const textArea1 = document.getElementById('inputtitle')
+    const textArea = document.getElementById('inputmessage')
+    const selectedStar = document.getElementById('starValue')
+    try {
+        let res = await fetch(`${BASE_URL}/api/v1/reviews/${id}`, {
+            method: 'post',
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            credentials: 'include',
+            body: JSON.stringify({
+                title: textArea1.value,
+                content: textArea.value,
+                star: selectedStar.value,
+                visitedDate: dateArea.value
+            })
+        });
+        if(res.status!=200){
+            alert(await res.json())
+        }else{
+            loadComments();
+        }
+        return await res.status;
+    } catch (error) {
+        console.log(error);
+        alert("Request Error!");
+    }
+    window.addEventListener('DOMContentLoaded', function () {
+        renderinout();
+        renderAlarms();
+      });
+}
+</script>
+</body>
+
+</html>

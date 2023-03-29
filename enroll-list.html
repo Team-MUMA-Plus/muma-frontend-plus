@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>Museum Mate | Enroll-list</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/palette.ico">
+    <!-- Load Require CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font CSS -->
+    <link href="assets/css/boxicon.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Load Tempalte CSS -->
+    <link rel="stylesheet" href="assets/css/templatemo.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <script src="assets/js/config.js"></script>
+</head>
+
+<body>
+  <div class = "enrollscontainer"></div>
+	<script src = "assets/js/custom.js"></script>
+	<script>
+    var parent_val = opener.document.getElementById('test-id').value;
+    console.log(parent_val);
+		window.addEventListener('DOMContentLoaded', function () {
+			  renderEnrolls(parent_val);
+		});
+
+    async function getEnrolls(gatheringId) {
+        let url = `${BASE_URL}/api/v1/gatherings/${gatheringId}/enroll/list`;
+        try {
+            let res = await fetch(url,{
+                credentials: 'include'
+            });
+            return await res.json();
+        } catch (error) {
+            console.log(error);
+            alert("Request Error!");
+        }
+    }
+
+    async function renderEnrolls(gatheringId) {
+      let enrolls = await getEnrolls(gatheringId);
+      let enroll = enrolls.result;
+      console.log(enrolls.resultCode)
+      if(enrolls.resultCode=="ERROR"){
+        if(enrolls.result.errorCode=="INVALID_TOKEN"){
+            alert("로그인을 해주세요");
+        }
+        else if(enrolls.result.errorCode=="INVALID_REQUEST"){
+          alert(enrolls.result.message);
+        }
+        else{
+            console.log(enrolls.result.message);
+            alert(enrolls.result.message);
+        }
+      }
+      let html = 
+      `<div class="pricing-list shadow-sm rounded-top rounded-3 py-sm-0 py-5">
+        <div class="row p-0">
+            <div class="pricing-list-icon col-3 text-center m-auto text-secondary ml-5 py-2">
+            </div>
+            <div class="pricing-list-body col-md-5 align-items-center pl-3 pt-2">
+                <ul class="list-unstyled text-center light-300">
+                    <li class="h5 semi-bold-600 mb-0 mt-3">신청자 목록</li>
+                </ul>
+            </div>
+            <div class="pricing-list-footer col-4 text-center m-auto align-items-center">
+            </div>
+        </div>
+      </div> `;
+      enroll.forEach(element => {
+          let htmlSegment = 
+          `<div class="pricing-list shadow-sm py-sm-0 py-5">
+            <div class="row p-2">
+                <div class="pricing-list-icon col-3 text-center m-auto text-secondary ml-5 py-2">
+                    <i class="display-3 bx bx-user"></i>
+                </div>
+                <div class="pricing-list-body col-md-5 align-items-center pl-3 pt-2">
+                    <ul class="list-unstyled text-center light-300">
+                        <li class="h5 semi-bold-600 mb-0 mt-3">${element.userName}</li>
+                        <li>${element.createdAt}</li>
+                    </ul>
+                </div>
+                <div class="pricing-list-footer col-sm-4 col-5 text-center m-auto align-items-center">
+                    <a href="#" class="btn rounded-pill px-4 btn-primary light-300" onclick="renderApproveUser(${gatheringId},${element.participantId})"> 승인</a>
+                </div>
+            </div>
+          </div>`;
+          html += htmlSegment;
+      });
+
+      let container = document.querySelector('.enrollscontainer');
+      container.innerHTML = html;
+    }
+	</script>
+</body>
+
+</html>

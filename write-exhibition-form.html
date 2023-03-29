@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Museum Mate | Show more Exhibitions!</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" href="assets/img/apple-icon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/palette.ico" />
+    <!-- Load Require CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://assets.ubuntu.com/v1/vanilla-framework-version-3.11.0.min.css" />
+
+    <!-- Font CSS -->
+    <link href="assets/css/boxicon.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+    <!-- Load Tempalte CSS -->
+    <link rel="stylesheet" href="assets/css/templatemo.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/custom.css" />
+    <script defer src="assets/js/config.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.js"></script>
+  </head>
+  <script src="/assets/js/authorization/cookieutils.js"></script>
+  <script>
+    // 쿠키에 저장된 토큰을 가져와서 검증
+  </script>
+
+  <body>
+    <!-- Header -->
+    <nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-white shadow">
+      <div class="container d-flex justify-content-between align-items-center">
+          <a class="navbar-brand h1" href="index.html">
+              <i class='bx bx-palette bx-sm text-dark'></i>
+              <span class="text-dark h4">MUMA</span> <span class="text-primary h5">Museum Mate</span>
+          </a>
+          <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbar-toggler-success" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between"
+              id="navbar-toggler-success">
+              <div class="flex-fill mx-xl-5 mb-2">
+                  <ul class="nav navbar-nav d-flex justify-content-start mx-xl-5 text-center text-dark">
+                      <li class="nav-item">
+                          <a class="nav-link btn-outline-primary rounded-pill px-3" href="/">홈</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link btn-outline-primary rounded-pill px-3" href="/exhibition">전시</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link btn-outline-primary rounded-pill px-3" href="/gathering">함께 보러 가요</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link btn-outline-primary rounded-pill px-3" href="/myinfo">마이 페이지</a>
+                      </li>
+                  </ul>
+              </div>
+              <div class="navbar align-self-center d-flex">
+                      <div class="lolocontainer"></div>
+                      <div class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class='bx bx-bell bx-sm bx-tada-hover text-primary'></i>
+                      </div>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <div class = "alarmscontainer"></div>
+                      </ul>
+                  </div>
+                  
+              </div>
+          </div>
+      </div>
+  </nav>
+
+    <!-- Start Banner Hero -->
+    <section class="bg-light" id="exhibitionForm">
+      <div class="container py-4">
+        <!-- <div class="row align-items-center justify-content-between"> -->
+        <h1 class="h2 pb-3 text-primary">전시회 정보 등록</h1>
+        <h3 class="h4 regular-400">소개하고 싶은 전시가 있으신가요?</h3>
+        <p>
+          뮤메는 전국 모든 전시 정보를 서비스하기 위해 노력하고 있습니다.
+          <br />
+          그럼에도 누락된 전시가 있다면, 뮤메에게 알려주세요!
+        </p>
+
+        <!-- 이미지 축소, 가운데 정렬 -->
+        <div class="u-align--center">
+          <img src="./assets/img/write-exhibition-pink.svg" />
+        </div>
+      </div>
+    </section>
+    <!-- End Banner Hero -->
+
+    <!-- Start Contact -->
+    <section id="write-exhibition" class="container py-5">
+      <h3 class="col-12 col-xl-8 text-left text-primary pt-3">✶ NOTICE ✶</h3>
+      <p class="col-12 col-xl-8 text-left text-muted pb-5 light-300">
+        (안내) 부정확한 정보가 입력될 경우 웹사이트에 게재되지 않을 수 있으니 참고 바랍니다.
+      </p>
+
+      <!-- all screens float -->
+      <!-- 전시회 정보 등록 form 시작 -->
+      <form>
+        <p class="p-heading--2">✔️ 전시회 기본 정보</p>
+        <fieldset>
+          <!-- exhibition.name -->
+          <div class="mb-4">
+            <div class="mb-5">
+              <p class="p-heading--4">전시회 제목</p>
+              <input
+                type="text"
+                id="exhibitionName"
+                name="exampleTextInput"
+                placeholder="작성 예시: 작가 이뮤메 데뷔전 "
+              />
+              <p class="p-form-help-text" id="exampleInputHelpMessage">전시의 부제목이 있다면, 함께 작성해주세요.</p>
+            </div>
+          </div>
+
+          <!-- mainImgUrl -->
+          <div class="mb-4">
+            <div class="mb-5">
+              <p class="p-heading--4">대표 이미지</p>
+              <label for="Image" class="form-label">📎 파일 첨부</label>
+              <input class="form-control" type="file" id="MainImgformFile" name="imgFile" onchange="previewMainImg()" oninput="getS3MainImgUrl()" />
+              <input type="hidden" id="hiddenMainImgUrl" value="">
+              <button onclick="clearMainImage()" class="btn btn-primary mt-3" type="button">delete</button>
+            </div>
+            <img id="MainImgframe" src="" class="img-fluid" />
+          </div>
+
+          <!-- detailInfoUrl -->
+          <div class="mb-4">
+            <!-- Gallery Name -->
+            <p class="p-heading--4">웹사이트 주소</p>
+            <input
+              type="text"
+              class="form-control form-control-lg light-300"
+              id="detail_info_url"
+              name="inputname"
+              placeholder="작성 예시) www.withmuma.com"
+            />
+            <p class="p-form-help-text" id="exampleInputHelpMessage">전시 정보를 확인할 수 있는 웹사이트 링크를 입력해주세요.</p>
+          </div>
+          <!-- detailInfoUrl -->
+        </fieldset>
+
+        <!-- Gallery -->
+        <p class="p-heading--2">✔️ 전시회 장소</p>
+        <fieldset>
+          <div class="mb-4">
+            <!-- Gallery Location -->
+            <p class="p-heading--4">전시장 주소</p>
+            <input
+              type="text"
+              class="form-control form-control-lg light-300"
+              id="gallery_address"
+              name="inputname"
+              placeholder="주소"
+              onclick="findAddr()"
+            />
+            <input
+              type="text"
+              class="form-control form-control-lg light-300"
+              id="gallery_address_detail"
+              name="inputname"
+              placeholder="상세 주소"
+            />
+          </div>
+
+          <div class="mb-4">
+            <!-- Gallery Name -->
+            <p class="p-heading--4">전시장 이름</p>
+            <input
+              type="text"
+              class="form-control form-control-lg light-300"
+              id="gallery_name"
+              name="inputname"
+              placeholder="작성 예시) 국립현대미술관"
+            />
+            <p class="p-form-help-text" id="exampleInputHelpMessage">가능한 한 상세히 입력해주세요.</p>
+          </div>
+        </fieldset>
+
+        <!-- exhibition.start_at -->
+        <p class="p-heading--2">✔️ 전시 일정</p>
+        <fieldset>
+          <div class="mb-4">
+            <p class="p-heading--4">시작 날짜</p>
+            <input
+              type="date"
+              class="form-control form-control-lg light-300"
+              id="current-date"
+              name="meeting-time"
+              value=""
+            />
+          </div>
+
+          <!-- exhibition.end_at -->
+          <div class="mb-4">
+            <p class="p-heading--4">종료 날짜</p>
+            <input
+              type="date"
+              class="form-control form-control-lg light-300"
+              id="end-date"
+              name="meeting-time"
+              value=""
+            />
+          </div>
+        </fieldset>
+
+        <!-- exhibition.price -->
+        <!-- 가격 폼 넣기 -->
+        <div class="mb-4">
+          <p class="p-heading--2">✔️ 전시 티켓 가격</p>
+          <!-- <span class="currency-code">원</span> -->
+          <input
+            type="text"
+            id="exhibitionTicketPrice"
+            class="form-control form-control-lg light-300"
+            placeholder="무료 전시는 무료로 입력해주세요."
+          />
+          <p class="p-form-help-text" id="exampleInputHelpMessage">티켓은 성인 기준 가격으로 입력해주세요.</p>
+        </div>
+
+        <!-- exhibition.age_limit -->
+        <!-- 나이 제한 폼 넣기 -->
+        <div class="mb-4">
+          <p class="p-heading--2">✔️ 관람연령</p>
+          <div>
+            <select name="exampleSelect" id="ageLimit">
+              <option value="" value="" disabled="disabled" selected="">옵션을 선택하세요.</option>
+              <option value="전체 관람가">전체 관람가</option>
+              <optgroup label="연령 제한">
+                <option value="청소년 관람불가">청소년 관람불가</option>
+                <option value="아동, 청소년">아동, 청소년</option>
+              </optgroup>
+            </select>
+            <p class="p-form-help-text" id="exampleInputHelpMessage">관람연령을 선택해주세요.</p>
+          </div>
+        </div>
+
+        <p class="p-heading--2">✔️ 상세정보</p>
+        <fieldset>
+          <!-- exhibition.detail_info -->
+          <div class="mb-4">
+            <textarea
+              id="exhibitionDetailInfo"
+              name="textarea"
+              rows="5"
+              placeholder="상세정보를 입력해주세요."
+            ></textarea>
+            <p class="p-form-help-text" id="exampleInputHelpMessage">
+              위 항목 외, 전시에 관하여 추가해야 할 정보를 입력 바랍니다.
+            </p>
+          </div>
+          <!-- End Textarea Message -->
+
+          <!-- 파일 첨부 시작 -->
+          <div class="mb-4">
+            <div class="mb-5">
+              <p class="p-heading--4">📎 파일 첨부</p>
+              <input
+                class="form-control"
+                type="file"
+                id="DetailInfoImgformFile"
+                name="imgFile"
+                onchange="previewDetailInfoImg()"
+                oninput="getS3detailInfoImgUrl()"
+              />
+              <input type="hidden" id="hiddenDetailInfoImgUrl" value="">
+              <button onclick="clearDetailInfoImage()" class="btn btn-primary mt-3" type="button">delete</button>
+            </div>
+            <img id="DetailInfoImgframe" src="" class="img-fluid" />
+          </div>
+          <!-- 파일 첨부 끝 -->
+
+        </fieldset>
+
+        
+
+        <p class="p-heading--2">✔️ 안내사항</p>
+        <fieldset>
+          <!-- exhibition.notice -->
+          <div class="mb-4">
+            <textarea id="exhibitionNotice" name="textarea" rows="5" placeholder="안내사항을 입력해주세요."></textarea>
+            <p class="p-form-help-text" id="exampleInputHelpMessage">관람객이 숙지해야 할 정보를 입력 바랍니다.</p>
+          </div>
+          <!-- End Textarea Message -->
+          <div class="mb-4">
+            <div class="mb-5">
+              <p class="p-heading--4">📎 파일 첨부</p>
+              <!-- <label for="Image" class="form-label">Bootstrap 5 image Upload with Preview</label> -->
+              <input
+                class="form-control"
+                type="file"
+                id="NoticeImgformFile"
+                name="imgFile"
+                onchange="previewNoticeImg()"
+                oninput="getS3noticeImgUrl()"
+              />
+              <input type="hidden" id="hiddenNoticeImgUrl" value="">
+              <button onclick="clearNoticeImage()" class="btn btn-primary mt-3" type="button">delete</button>
+            </div>
+            <img id="NoticeImgframe" src="" class="img-fluid" />
+          </div>
+        </fieldset>
+
+        <!-- 제출 버튼 시작 -->
+        <div class="col-md-12 col-12 m-auto text-end">
+          <button
+            it=" submitButton"
+            type="submit"
+            class="btn btn-secondary rounded-pill px-md-5 px-4 py-2 radius-0 text-light light-300"
+          >
+            등록하기
+          </button>
+        </div>
+        <!-- 제출 버튼 끝 -->
+      </form>
+      <!-- 전시회 정보 등록 form 끝 -->
+    </section>
+    <!-- End Contact -->
+
+    <!--  Footer -->
+    <!-- <footer></footer> -->
+
+    <!-- Bootstrap -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Templatemo -->
+    <script src="assets/js/templatemo.js"></script>
+    <!-- Custom -->
+    <script src="assets/js/custom.js"></script>
+    <!-- kakao map api -->
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
+    <script src="assets/js/write-exhibition-form.js"></script>
+    <script>
+      window.addEventListener('DOMContentLoaded', function () {
+        postExhibitionInfo();
+        
+      });
+    </script>
+  </body>
+</html>
